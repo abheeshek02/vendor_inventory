@@ -1,0 +1,75 @@
+Absolutely, Abhishek! You've explored a solid chunk of NumPy fundamentals — from array creation and properties to memory layout and reshaping. Let’s turn that into **interview-ready Q&A** that highlights both your understanding and your practical insights. 🎯
+
+---
+
+## 🧠 NumPy Interview Questions with Answers
+
+### 1. **What is a NumPy array and how is it different from a Python list?**
+> A NumPy array is a fixed-type multi-dimensional container for numerical data. Unlike Python lists, NumPy arrays are more memory efficient and support fast element-wise operations using vectorization.
+
+---
+
+### 2. **Explain the difference between `view()` and `copy()` in NumPy.**
+> - `view()` creates a shallow copy — changes in the view affect the original array.  
+> - `copy()` creates a deep copy — modifications do not reflect in the original.
+
+```python
+a = np.array([1, 2, 3])
+b = a.view(); b[0] = 100  # a changes
+c = a.copy(); c[0] = 500  # a remains unchanged
+```
+
+---
+
+### 3. **What are `ndim`, `shape`, and `size` in a NumPy array?**
+> - `ndim`: Number of dimensions (e.g., 2D, 3D)
+> - `shape`: Tuple of dimensions (e.g., (3, 4) means 3 rows, 4 columns)
+> - `size`: Total number of elements
+
+---
+
+### 4. **What are `itemsize`, `nbytes`, and `dtype`?**
+> - `itemsize`: Size in bytes of a single element
+> - `nbytes`: Total memory used (size × itemsize)
+> - `dtype`: Data type of elements (e.g., `int64`, `float32`)
+
+---
+
+### 5. **What does `strides` represent in NumPy?**
+> `strides` tell how many bytes to step in each dimension when traversing an array. It reflects the array's memory layout and is crucial for performance tuning.
+
+---
+
+### 6. **How is the `reshape()` method used?**
+> `reshape()` lets you change the shape of the array without changing the data. Useful for preparing data for models or analyses.
+
+```python
+a = np.array([1, 2, 3, 4, 5, 6])
+a.reshape((2, 3))  # Gives a 2x3 matrix
+```
+
+---
+
+### 7. **What is the difference between `ravel()` and `flatten()`?**
+> - `ravel()` returns a flattened view (when possible), doesn't copy data  
+> - `flatten()` always returns a copy  
+> Use `ravel()` for performance, `flatten()` for safety.
+
+---
+
+### 8. **What is the `.T` attribute in NumPy?**
+> `.T` returns the transpose of an array — rows become columns and vice versa. For 2D arrays, it’s commonly used in matrix operations.
+
+---
+
+### 9. **What does the `.base` attribute tell us?**
+> If an array is derived from another using slicing or `view()`, `.base` points to the original data source. If it’s `None`, the array owns its data.
+
+---
+
+### 10. **What information does the `.flags` attribute provide?**
+> It shows memory layout and read/write permissions — like whether the array is C-contiguous, writeable, or aligned properly.
+
+---
+
+If you’d like, I can convert this into a formatted reference sheet or simulate a mock interview with follow-up questions. Want to push deeper into slicing, broadcasting, or performance tips? You’re primed for some advanced-level stuff! 🚀📈
